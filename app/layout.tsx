@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import { MotionProvider } from "@/providers/MotionProvider" // <-- importa aqui
+import { MotionProvider } from "@/providers/MotionProvider"
+import { QueryProvider } from "@/providers/QueryProvider" // novo import
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,12 +23,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MotionProvider>
-          {children}
+          <QueryProvider>
+            {children}
+          </QueryProvider>
         </MotionProvider>
       </body>
     </html>
