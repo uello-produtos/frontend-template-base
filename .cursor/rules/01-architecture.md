@@ -8,3 +8,4 @@
 - Acessibilidade: todo componente interativo com aria-*. 
 - Testes básicos: `pnpm test` (adicione depois). 
 - Commits: conv. `feat:`, `fix:`, `chore:`.
+- Componentes que usam Motion precisam ser Client Components (`"use client"` no topo) OU isolar a parte animada em um subcomponente cliente.
