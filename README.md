@@ -1,6 +1,19 @@
 # Frontend Template Base
 
-Um template moderno e robusto para desenvolvimento frontend com Next.js 15, TypeScript, shadcn/ui, Framer Motion e React Query.
+## 📖 Introdução
+
+Este projeto nasceu da necessidade de **evitar começar do zero em cada novo frontend**.  
+A ideia de um *template base* é ter uma fundação confiável, já equipada com boas práticas, que acelera o início de qualquer aplicação.
+
+Com isso, você ganha:  
+- **Produtividade** → menos tempo configurando, mais tempo construindo funcionalidades reais.  
+- **Consistência** → mesmo padrão de código, UI e arquitetura em todos os projetos.  
+- **Manutenibilidade** → stack já validada, com providers e integrações prontos para uso.  
+- **Escalabilidade** → fácil adicionar novas features sem refazer o básico.  
+- **Foco** → energia direcionada para resolver o problema do produto, não para reconfigurar setup.  
+
+Este repositório funciona como um ponto de partida moderno e pragmático, reduzindo atrito no desenvolvimento e garantindo que novas ideias possam ser testadas rapidamente sem perder qualidade.
+
 
 ## 🚀 Tecnologias
 
