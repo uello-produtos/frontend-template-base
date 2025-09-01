@@ -1,50 +1,68 @@
 # Frontend Template Base
 
-Um template moderno e robusto para desenvolvimento frontend com Next.js, TypeScript, shadcn/ui e Framer Motion.
+Um template moderno e robusto para desenvolvimento frontend com Next.js 15, TypeScript, shadcn/ui, Framer Motion e React Query.
 
 ## 🚀 Tecnologias
 
-- **Framework**: [Next.js 15](https://nextjs.org) com App Router
-- **Linguagem**: [TypeScript](https://www.typescriptlang.org/)
+- **Framework**: [Next.js 15.5.2](https://nextjs.org) com App Router
+- **Linguagem**: [TypeScript 5](https://www.typescriptlang.org/)
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/) - Componentes reutilizáveis e acessíveis
-- **Animações**: [Framer Motion](https://www.framer.com/motion/) - Biblioteca de animações para React
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário
+- **Animações**: [Framer Motion 12](https://www.framer.com/motion/) - Biblioteca de animações para React
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) - Framework CSS utilitário
 - **Package Manager**: [pnpm](https://pnpm.io/) - Gerenciador de pacotes rápido e eficiente
-- **Linting**: [ESLint](https://eslint.org/) - Linter para JavaScript/TypeScript
+- **Linting**: [ESLint 9](https://eslint.org/) - Linter para JavaScript/TypeScript
+- **Formatação**: [Prettier](https://prettier.io/) - Formatador de código
+- **Validação**: [Zod](https://zod.dev/) - Validação de schemas TypeScript
+- **Notificações**: [Sonner](https://sonner.emilkowal.ski/) - Sistema de toasts elegante
+- **Temas**: [next-themes](https://github.com/pacocoursey/next-themes) - Suporte a temas claro/escuro
 
 ## ✨ Características
 
 - **Motion Provider**: Configuração centralizada para animações com Framer Motion
+- **Query Provider**: Configuração do React Query/TanStack Query para gerenciamento de estado
 - **Hooks Customizados**: `useOnceInView` para detecção de visibilidade
 - **Variantes de Animação**: Sistema de animações pré-definidas e reutilizáveis
-- **Componentes UI**: Biblioteca completa de componentes shadcn/ui
+- **Componentes UI**: Biblioteca completa de componentes shadcn/ui com Radix UI
 - **Responsivo**: Design mobile-first com Tailwind CSS
 - **TypeScript**: Tipagem completa para melhor DX e segurança
+- **Validação de Ambiente**: Schema Zod para variáveis de ambiente
+- **Sistema de Temas**: Suporte nativo a temas claro/escuro
+- **Tratamento de Erros**: Páginas de erro, loading e 404 personalizadas
+- **Skeletons**: Componentes de carregamento elegantes
 
 ## 🏗️ Estrutura do Projeto
 
 ```
 ├── app/
 │   ├── (app)/
-│   │   └── demo/           # Página de demonstração
+│   │   ├── demo/           # Página de demonstração
+│   │   ├── error.tsx       # Tratamento de erros
+│   │   └── loading.tsx     # Página de carregamento
 │   ├── globals.css         # Estilos globais
-│   ├── layout.tsx          # Layout principal
+│   ├── layout.tsx          # Layout principal com providers
+│   ├── not-found.tsx       # Página 404
 │   └── page.tsx            # Página inicial
 ├── components/
 │   └── ui/                 # Componentes shadcn/ui
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── input.tsx
-│       └── label.tsx
+│       ├── button.tsx      # Botões com variantes
+│       ├── card.tsx        # Cards e containers
+│       ├── dialog.tsx      # Modais e diálogos
+│       ├── dropdown-menu.tsx # Menus dropdown
+│       ├── input.tsx       # Campos de entrada
+│       ├── label.tsx       # Labels para formulários
+│       ├── popover.tsx     # Popovers informativos
+│       ├── skeleton.tsx    # Componentes de carregamento
+│       └── sonner.tsx      # Sistema de notificações
 ├── hooks/
 │   └── use-once-in-view.ts # Hook para detecção de visibilidade
 ├── lib/
+│   ├── env.ts              # Validação de variáveis de ambiente
 │   ├── motion.ts           # Utilitários de animação
-│   ├── cn.ts              # Utilitário para classes CSS
-│   └── utils.ts           # Funções utilitárias
+│   ├── cn.ts               # Utilitário para classes CSS
+│   └── utils.ts            # Funções utilitárias
 ├── providers/
-│   └── MotionProvider.tsx  # Provider para configurações de animação
+│   ├── MotionProvider.tsx  # Provider para configurações de animação
+│   └── QueryProvider.tsx   # Provider para React Query
 └── public/                 # Assets estáticos
 ```
 
@@ -68,12 +86,18 @@ cd frontend-template-base
 pnpm install
 ```
 
-3. Execute o servidor de desenvolvimento:
+3. Configure as variáveis de ambiente (opcional):
+```bash
+# .env.local
+NEXT_PUBLIC_API_BASE=https://api.exemplo.com
+```
+
+4. Execute o servidor de desenvolvimento:
 ```bash
 pnpm dev
 ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
+5. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
 ## 📱 Página de Demonstração
 
@@ -82,6 +106,7 @@ Acesse `/demo` para ver exemplos de:
 - Animações de entrada com `staggerChildren`
 - Efeitos de hover com spring physics
 - Integração shadcn/ui + Framer Motion
+- Sistema de grid responsivo
 
 ## 🎨 Sistema de Animações
 
@@ -114,19 +139,92 @@ import { useOnceInView } from '@/hooks/use-once-in-view'
 const { ref, inView } = useOnceInView()
 ```
 
+## 🔧 Sistema de Queries
+
+### Query Provider
+```tsx
+import { QueryProvider } from '@/providers/QueryProvider'
+
+export default function RootLayout({ children }) {
+  return (
+    <QueryProvider>
+      {children}
+    </QueryProvider>
+  )
+}
+```
+
+### Uso do React Query
+```tsx
+import { useQuery } from '@tanstack/react-query'
+
+const { data, isLoading } = useQuery({
+  queryKey: ['users'],
+  queryFn: fetchUsers
+})
+```
+
+## 🎭 Componentes UI Disponíveis
+
+### Componentes Base
+- **Button**: Botões com múltiplas variantes e estados
+- **Card**: Containers para conteúdo organizado
+- **Dialog**: Modais e diálogos acessíveis
+- **Input**: Campos de entrada com validação
+- **Label**: Labels para formulários
+- **Skeleton**: Componentes de carregamento
+
+### Componentes Avançados
+- **Dropdown Menu**: Menus dropdown interativos
+- **Popover**: Popovers informativos
+- **Sonner**: Sistema de notificações elegante
+
 ## 🛠️ Scripts Disponíveis
 
 - `pnpm dev` - Servidor de desenvolvimento
 - `pnpm build` - Build de produção
 - `pnpm start` - Servidor de produção
 - `pnpm lint` - Executar ESLint
+- `pnpm format` - Formatar código com Prettier
+- `pnpm typecheck` - Verificar tipos TypeScript
+
+## 🔒 Validação e Segurança
+
+### Variáveis de Ambiente
+```tsx
+import { env } from '@/lib/env'
+
+// Validação automática com Zod
+const apiUrl = env.NEXT_PUBLIC_API_BASE
+```
+
+### Validação de Dados
+```tsx
+import { z } from 'zod'
+
+const userSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email()
+})
+```
+
+## 🌓 Sistema de Temas
+
+### Configuração Automática
+- Suporte nativo a temas claro/escuro
+- Integração com `next-themes`
+- Detecção automática de preferência do sistema
+- Transições suaves entre temas
 
 ## 📚 Recursos Adicionais
 
-- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js 15 Documentation](https://nextjs.org/docs)
 - [shadcn/ui Components](https://ui.shadcn.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Tailwind CSS 4](https://tailwindcss.com/docs)
+- [React Query](https://tanstack.com/query/latest)
+- [Zod](https://zod.dev/)
+- [Sonner](https://sonner.emilkowal.ski/)
 
 ## 🤝 Contribuindo
 
