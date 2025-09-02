@@ -2,7 +2,7 @@
 
 ## 📖 Introdução
 
-Este projeto nasceu da necessidade de **evitar começar do zero em cada novo frontend**.  
+Este projeto nasceu da necessidade de **evitar começar do zero em cada novo frontend** quando utilizamos editores de código como o Cursor que insiste a cada proejto "criar" de forma diferente e despadronizada. 
 A ideia de um *template base* é ter uma fundação confiável, já equipada com boas práticas, que acelera o início de qualquer aplicação.
 
 Com isso, você ganha:  
