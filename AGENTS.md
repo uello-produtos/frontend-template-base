@@ -171,6 +171,8 @@ Resumo:
 - Começar por testes de utilitários em `lib/*` e hooks em `hooks/*`
 - Exemplo em `lib/utils.test.ts`
 
+> **Nota**: Vitest usa Vite internamente apenas para executar testes. O projeto usa **Turbopack** (Next.js) como bundler principal, não Vite.
+
 ## Commits
 
 - Convenção: `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`

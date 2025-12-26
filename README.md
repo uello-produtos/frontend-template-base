@@ -31,7 +31,7 @@ Stack principal:
 - **Formulários**: [react-hook-form](https://react-hook-form.com/) + Zod - Gerenciamento de formulários
 - **Notificações**: [Sonner](https://sonner.emilkowal.ski/) - Sistema de toasts elegante
 - **Temas**: [next-themes](https://github.com/pacocoursey/next-themes) - Suporte a temas claro/escuro
-- **Testes**: [Vitest](https://vitest.dev/) + React Testing Library - Framework de testes
+- **Testes**: [Vitest](https://vitest.dev/) + React Testing Library - Framework de testes (Vitest usa Vite internamente apenas para testes; o bundler principal é Turbopack)
 
 ## ✨ Características
 

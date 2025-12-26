@@ -62,12 +62,18 @@
 - **Vitest**: 2.1.8 (framework de testes)
 - **@testing-library/react**: 16.1.0
 - **@testing-library/jest-dom**: 6.6.3
-- **@vitejs/plugin-react**: 4.3.4
+- **@vitejs/plugin-react**: 4.3.4 (usado apenas pelo Vitest)
 - **jsdom**: 25.0.1 (ambiente DOM para testes)
+
+> **Nota importante**: Vite é usado **apenas** pelo Vitest para executar testes. O projeto **não** usa Vite como bundler principal. O bundler de desenvolvimento é **Turbopack** (via Next.js).
 
 ### Build e Dev Tools
 
-- **Turbopack**: Usado por padrão (`next dev --turbo`)
+- **Turbopack**: Bundler principal usado por padrão (`next dev --turbo`)
+  - Substitui Webpack no Next.js 16
+  - Mais rápido para desenvolvimento
+  - Configurado automaticamente pelo Next.js
+- **Next.js Build**: Sistema de build próprio do Next.js para produção (`next build`)
 - **TypeScript**: Compilação e type checking
 
 ## Configurações Importantes
@@ -83,8 +89,11 @@
 ### Next.js (`next.config.ts`)
 
 - **App Router**: Habilitado
-- **Turbopack**: Suportado
+- **Turbopack**: Bundler principal de desenvolvimento (substitui Webpack)
+- **Build**: Sistema próprio do Next.js para produção
 - Configurações padrão do Next.js 16
+
+> **Importante**: Este projeto usa **Turbopack** como bundler, não Vite. Vite é usado apenas pelo Vitest para testes.
 
 ### Tailwind (`postcss.config.mjs`)
 
@@ -150,7 +159,9 @@
 
 ### Testes
 - vitest, @testing-library/react, @testing-library/jest-dom
-- @vitejs/plugin-react, jsdom
+- @vitejs/plugin-react (usado apenas pelo Vitest), jsdom
+
+> **Nota**: `@vitejs/plugin-react` é uma dependência do Vitest, não do projeto principal. Vite não é usado como bundler - apenas Turbopack/Next.js.
 
 ### Styling
 - tailwindcss, @tailwindcss/postcss, tw-animate-css

@@ -173,6 +173,8 @@ providers/          # Providers React (client-side)
 - **Foco inicial**: Utilitários (`lib/*`) e hooks (`hooks/*`)
 - **Exemplo**: `lib/utils.test.ts`
 
+> **Nota importante**: Vitest usa Vite internamente apenas para executar testes. O projeto **não** usa Vite como bundler - o bundler principal é **Turbopack** (via Next.js 16).
+
 ## Padrões de Código
 
 ### TypeScript
