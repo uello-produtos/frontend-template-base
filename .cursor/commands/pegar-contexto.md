@@ -1,0 +1,1 @@
+Quero que você pegue todo contexto do projeto, leia os arquivos .md (Banco de memoria, .cursor/rules, /docs, README e demais existentes). Após isso, espere o meu próximo comando. 

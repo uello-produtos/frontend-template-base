@@ -17,65 +17,57 @@ Este repositório funciona como um ponto de partida moderno e pragmático, reduz
 
 ## 🚀 Tecnologias
 
-- **Framework**: [Next.js 15.5.2](https://nextjs.org) com App Router
-- **Linguagem**: [TypeScript 5](https://www.typescriptlang.org/)
+Ver `memory-bank/techContext.md` para stack completa com versões detalhadas.
+
+Stack principal:
+- **Framework**: [Next.js 16](https://nextjs.org) com App Router e Turbopack
+- **Linguagem**: [TypeScript 5.9](https://www.typescriptlang.org/)
+- **React**: [React 19.2](https://react.dev/)
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/) - Componentes reutilizáveis e acessíveis
 - **Animações**: [Framer Motion 12](https://www.framer.com/motion/) - Biblioteca de animações para React
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) - Framework CSS utilitário
 - **Package Manager**: [pnpm](https://pnpm.io/) - Gerenciador de pacotes rápido e eficiente
-- **Linting**: [ESLint 9](https://eslint.org/) - Linter para JavaScript/TypeScript
-- **Formatação**: [Prettier](https://prettier.io/) - Formatador de código
-- **Validação**: [Zod](https://zod.dev/) - Validação de schemas TypeScript
+- **Validação**: [Zod 4](https://zod.dev/) - Validação de schemas TypeScript
+- **Formulários**: [react-hook-form](https://react-hook-form.com/) + Zod - Gerenciamento de formulários
 - **Notificações**: [Sonner](https://sonner.emilkowal.ski/) - Sistema de toasts elegante
 - **Temas**: [next-themes](https://github.com/pacocoursey/next-themes) - Suporte a temas claro/escuro
+- **Testes**: [Vitest](https://vitest.dev/) + React Testing Library - Framework de testes
 
 ## ✨ Características
 
 - **Motion Provider**: Configuração centralizada para animações com Framer Motion
 - **Query Provider**: Configuração do React Query/TanStack Query para gerenciamento de estado
+- **Theme Provider**: Suporte completo a temas claro/escuro com next-themes
+- **API Client**: Wrapper configurado para requisições HTTP com interceptors, retry e tratamento de erros
 - **Hooks Customizados**: `useOnceInView` para detecção de visibilidade
 - **Variantes de Animação**: Sistema de animações pré-definidas e reutilizáveis
 - **Componentes UI**: Biblioteca completa de componentes shadcn/ui com Radix UI
+- **Formulários**: react-hook-form + Zod para validação completa
 - **Responsivo**: Design mobile-first com Tailwind CSS
-- **TypeScript**: Tipagem completa para melhor DX e segurança
+- **TypeScript**: Tipagem completa e estrita para melhor DX e segurança
 - **Validação de Ambiente**: Schema Zod para variáveis de ambiente
-- **Sistema de Temas**: Suporte nativo a temas claro/escuro
-- **Tratamento de Erros**: Páginas de erro, loading e 404 personalizadas
+- **Configurações Centralizadas**: Arquivos `lib/config.ts` e `lib/constants.ts` para organização
+- **Tratamento de Erros**: Páginas de erro, loading e 404 personalizadas e acessíveis
 - **Skeletons**: Componentes de carregamento elegantes
+- **Testes**: Vitest configurado com React Testing Library
+- **Prettier**: Formatação automática de código configurada
+- **AGENTS.md**: Instruções padronizadas para agentes de IA (padrão aberto)
 
 ## 🏗️ Estrutura do Projeto
 
+Ver `memory-bank/systemPatterns.md` para estrutura completa e explicações detalhadas.
+
+Estrutura resumida:
 ```
-├── app/
-│   ├── (app)/
-│   │   ├── demo/           # Página de demonstração
-│   │   ├── error.tsx       # Tratamento de erros
-│   │   └── loading.tsx     # Página de carregamento
-│   ├── globals.css         # Estilos globais
-│   ├── layout.tsx          # Layout principal com providers
-│   ├── not-found.tsx       # Página 404
-│   └── page.tsx            # Página inicial
+├── app/                    # Rotas e páginas (App Router)
+│   ├── (app)/             # Rotas autenticadas
+│   ├── (marketing)/       # Rotas públicas
+│   └── api/               # API Route Handlers
 ├── components/
-│   └── ui/                 # Componentes shadcn/ui
-│       ├── button.tsx      # Botões com variantes
-│       ├── card.tsx        # Cards e containers
-│       ├── dialog.tsx      # Modais e diálogos
-│       ├── dropdown-menu.tsx # Menus dropdown
-│       ├── input.tsx       # Campos de entrada
-│       ├── label.tsx       # Labels para formulários
-│       ├── popover.tsx     # Popovers informativos
-│       ├── skeleton.tsx    # Componentes de carregamento
-│       └── sonner.tsx      # Sistema de notificações
-├── hooks/
-│   └── use-once-in-view.ts # Hook para detecção de visibilidade
-├── lib/
-│   ├── env.ts              # Validação de variáveis de ambiente
-│   ├── motion.ts           # Utilitários de animação
-│   ├── cn.ts               # Utilitário para classes CSS
-│   └── utils.ts            # Funções utilitárias
-├── providers/
-│   ├── MotionProvider.tsx  # Provider para configurações de animação
-│   └── QueryProvider.tsx   # Provider para React Query
+│   └── ui/                # Componentes shadcn/ui
+├── lib/                    # Utilitários e configurações
+├── hooks/                  # Hooks customizados
+├── providers/              # Providers React
 └── public/                 # Assets estáticos
 ```
 
@@ -179,27 +171,31 @@ const { data, isLoading } = useQuery({
 
 ## 🎭 Componentes UI Disponíveis
 
-### Componentes Base
+Ver `AGENTS.md` seção "shadcn/ui" para lista completa e instruções de uso.
+
+Componentes principais:
 - **Button**: Botões com múltiplas variantes e estados
 - **Card**: Containers para conteúdo organizado
 - **Dialog**: Modais e diálogos acessíveis
 - **Input**: Campos de entrada com validação
 - **Label**: Labels para formulários
 - **Skeleton**: Componentes de carregamento
-
-### Componentes Avançados
 - **Dropdown Menu**: Menus dropdown interativos
 - **Popover**: Popovers informativos
 - **Sonner**: Sistema de notificações elegante
 
 ## 🛠️ Scripts Disponíveis
 
-- `pnpm dev` - Servidor de desenvolvimento
+Ver `memory-bank/techContext.md` para lista completa e detalhada.
+
+Comandos principais:
+- `pnpm dev` - Servidor de desenvolvimento com Turbopack
 - `pnpm build` - Build de produção
 - `pnpm start` - Servidor de produção
 - `pnpm lint` - Executar ESLint
 - `pnpm format` - Formatar código com Prettier
 - `pnpm typecheck` - Verificar tipos TypeScript
+- `pnpm test` - Executar testes com Vitest
 
 ## 🔒 Validação e Segurança
 
@@ -231,13 +227,48 @@ const userSchema = z.object({
 
 ## 📚 Recursos Adicionais
 
-- [Next.js 15 Documentation](https://nextjs.org/docs)
+- [Next.js 16 Documentation](https://nextjs.org/docs)
+- [AGENTS.md](AGENTS.md) - Instruções para agentes de IA (padrão aberto)
 - [shadcn/ui Components](https://ui.shadcn.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Tailwind CSS 4](https://tailwindcss.com/docs)
 - [React Query](https://tanstack.com/query/latest)
 - [Zod](https://zod.dev/)
+- [react-hook-form](https://react-hook-form.com/)
 - [Sonner](https://sonner.emilkowal.ski/)
+- [Vitest](https://vitest.dev/)
+
+## 🎯 Estrutura de Arquivos Importantes
+
+- `AGENTS.md` - Instruções completas para agentes de IA trabalhar no projeto (padrão genérico)
+- `memory-bank/` - Banco de memória completo do projeto (contexto, padrões, progresso)
+- `lib/api-client.ts` - Cliente HTTP configurado para requisições
+- `lib/config.ts` - Configurações da aplicação
+- `lib/constants.ts` - Constantes reutilizáveis
+- `app/api/example/route.ts` - Exemplo completo de API Route Handler
+- `.env.example` - Modelo de variáveis de ambiente
+
+## 📖 Documentação Adicional
+
+### Memory Bank
+
+O projeto inclui um **Memory Bank** completo em `memory-bank/` com:
+
+- **projectbrief.md** - Visão geral e objetivos do projeto
+- **productContext.md** - Por que o projeto existe e como funciona
+- **systemPatterns.md** - Arquitetura e padrões técnicos detalhados
+- **techContext.md** - Stack tecnológica e configurações
+- **activeContext.md** - Estado atual e foco do projeto
+- **progress.md** - O que está funcionando e o que falta
+
+Este Memory Bank é especialmente útil para:
+- Agentes de IA entenderem o contexto completo do projeto
+- Novos desenvolvedores se integrarem rapidamente
+- Manter consistência e padrões ao longo do tempo
+
+### AGENTS.md
+
+O arquivo `AGENTS.md` contém instruções completas e padrões críticos para agentes de IA trabalharem no projeto. É um padrão genérico que funciona com qualquer editor/ferramenta de IA, não apenas Cursor.
 
 ## 🤝 Contribuindo
 
