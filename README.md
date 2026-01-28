@@ -17,8 +17,6 @@ Este repositório funciona como um ponto de partida moderno e pragmático, reduz
 
 ## 🚀 Tecnologias
 
-Ver `memory-bank/techContext.md` para stack completa com versões detalhadas.
-
 Stack principal:
 - **Framework**: [Next.js 16](https://nextjs.org) com App Router e Turbopack
 - **Linguagem**: [TypeScript 5.9](https://www.typescriptlang.org/)
@@ -54,8 +52,6 @@ Stack principal:
 - **AGENTS.md**: Instruções padronizadas para agentes de IA (padrão aberto)
 
 ## 🏗️ Estrutura do Projeto
-
-Ver `memory-bank/systemPatterns.md` para estrutura completa e explicações detalhadas.
 
 Estrutura resumida:
 ```
@@ -103,15 +99,6 @@ pnpm dev
 ```
 
 5. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
-
-## 📱 Página de Demonstração
-
-Acesse `/demo` para ver exemplos de:
-- Cards interativos com animações hover
-- Animações de entrada com `staggerChildren`
-- Efeitos de hover com spring physics
-- Integração shadcn/ui + Framer Motion
-- Sistema de grid responsivo
 
 ## 🎨 Sistema de Animações
 
@@ -171,9 +158,8 @@ const { data, isLoading } = useQuery({
 
 ## 🎭 Componentes UI Disponíveis
 
-Ver `AGENTS.md` seção "shadcn/ui" para lista completa e instruções de uso.
+### Componentes Já Instalados
 
-Componentes principais:
 - **Button**: Botões com múltiplas variantes e estados
 - **Card**: Containers para conteúdo organizado
 - **Dialog**: Modais e diálogos acessíveis
@@ -183,10 +169,42 @@ Componentes principais:
 - **Dropdown Menu**: Menus dropdown interativos
 - **Popover**: Popovers informativos
 - **Sonner**: Sistema de notificações elegante
+- **Form**: Componentes de formulário (react-hook-form integrado)
+
+### Como Adicionar Novos Componentes
+
+O projeto possui o **shadcn CLI instalado localmente**. Use os scripts do `package.json` para adicionar componentes:
+
+```bash
+# Adicionar um componente
+pnpm shadcn:add button
+
+# Adicionar múltiplos componentes
+pnpm shadcn:add table select checkbox
+
+# Ver todos os comandos disponíveis
+pnpm shadcn
+```
+
+**Scripts Disponíveis:**
+- `pnpm shadcn` - Ver todos os comandos disponíveis do CLI
+- `pnpm shadcn:add [componente]` - Adicionar componente(s) ao projeto
+- `pnpm shadcn:init` - Reinicializar configuração (se necessário)
+
+**Exemplos:**
+```bash
+# Adicionar componente alert
+pnpm shadcn:add alert
+
+# Adicionar componente com overwrite
+pnpm shadcn:add button --overwrite
+```
+
+Todos os componentes são adicionados em `components/ui/*` e seguem as configurações do projeto definidas em `components.json`.
+
+Para lista completa de componentes disponíveis, consulte [shadcn/ui Components](https://ui.shadcn.com/docs/components).
 
 ## 🛠️ Scripts Disponíveis
-
-Ver `memory-bank/techContext.md` para lista completa e detalhada.
 
 Comandos principais:
 - `pnpm dev` - Servidor de desenvolvimento com Turbopack
@@ -196,6 +214,11 @@ Comandos principais:
 - `pnpm format` - Formatar código com Prettier
 - `pnpm typecheck` - Verificar tipos TypeScript
 - `pnpm test` - Executar testes com Vitest
+
+**Scripts do shadcn CLI:**
+- `pnpm shadcn` - Ver todos os comandos disponíveis do CLI
+- `pnpm shadcn:add [componente]` - Adicionar componente(s) do shadcn/ui
+- `pnpm shadcn:init` - Reinicializar configuração do shadcn
 
 ## 🔒 Validação e Segurança
 
@@ -241,34 +264,26 @@ const userSchema = z.object({
 ## 🎯 Estrutura de Arquivos Importantes
 
 - `AGENTS.md` - Instruções completas para agentes de IA trabalhar no projeto (padrão genérico)
-- `memory-bank/` - Banco de memória completo do projeto (contexto, padrões, progresso)
 - `lib/api-client.ts` - Cliente HTTP configurado para requisições
 - `lib/config.ts` - Configurações da aplicação
 - `lib/constants.ts` - Constantes reutilizáveis
 - `app/api/example/route.ts` - Exemplo completo de API Route Handler
+- `components.json` - Configuração do shadcn/ui
 - `.env.example` - Modelo de variáveis de ambiente
 
 ## 📖 Documentação Adicional
 
-### Memory Bank
-
-O projeto inclui um **Memory Bank** completo em `memory-bank/` com:
-
-- **projectbrief.md** - Visão geral e objetivos do projeto
-- **productContext.md** - Por que o projeto existe e como funciona
-- **systemPatterns.md** - Arquitetura e padrões técnicos detalhados
-- **techContext.md** - Stack tecnológica e configurações
-- **activeContext.md** - Estado atual e foco do projeto
-- **progress.md** - O que está funcionando e o que falta
-
-Este Memory Bank é especialmente útil para:
-- Agentes de IA entenderem o contexto completo do projeto
-- Novos desenvolvedores se integrarem rapidamente
-- Manter consistência e padrões ao longo do tempo
-
 ### AGENTS.md
 
-O arquivo `AGENTS.md` contém instruções completas e padrões críticos para agentes de IA trabalharem no projeto. É um padrão genérico que funciona com qualquer editor/ferramenta de IA, não apenas Cursor.
+O arquivo `AGENTS.md` contém instruções completas e padrões críticos para agentes de IA trabalharem no projeto. Inclui:
+- Contexto completo do projeto
+- Stack tecnológica com versões específicas
+- Padrões de arquitetura e código
+- Instruções detalhadas sobre como adicionar componentes do shadcn/ui
+- Guias de implementação para features comuns
+- Estado atual do projeto e o que está funcionando
+
+É um padrão genérico que funciona com qualquer editor/ferramenta de IA, não apenas Cursor.
 
 ## 🤝 Contribuindo
 

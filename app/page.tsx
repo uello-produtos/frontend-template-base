@@ -1,7 +1,5 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ROUTES } from "@/lib/constants"
 
 export default function Home() {
   return (
@@ -15,9 +13,6 @@ export default function Home() {
           Equipado com Next.js 16, React 19, TypeScript, shadcn/ui e muito mais.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
-          <Button asChild size="lg">
-            <Link href={ROUTES.DEMO}>Ver Demo</Link>
-          </Button>
           <Button asChild variant="outline" size="lg">
             <a
               href="https://github.com/utinside/frontend-template-base"

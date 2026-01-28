@@ -10,7 +10,6 @@
  */
 export const ROUTES = {
   HOME: "/",
-  DEMO: "/demo",
   NOT_FOUND: "/404",
 } as const
 
