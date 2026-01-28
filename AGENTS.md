@@ -76,7 +76,7 @@ pnpm format
 ### Versões Específicas
 
 **Framework e Runtime:**
-- Next.js: 16.1.1 (App Router, React Server Components)
+- Next.js: 16.1.5 (App Router, React Server Components)
 - React: 19.2.3 (Server Components por padrão)
 - TypeScript: 5.9.3 (strict mode)
 - Node.js: 18+ (requisito)
@@ -89,7 +89,7 @@ pnpm format
 - next-themes: 0.4.6 (sistema de temas)
 
 **Animações:**
-- Framer Motion: 12.23.26
+- Framer Motion: 12.29.2
 - tw-animate-css: 1.4.0 (animações CSS adicionais)
 
 **Estado e Dados:**
@@ -97,7 +97,7 @@ pnpm format
 - Zustand: Opcional (não incluído por padrão, pode ser adicionado se necessário)
 
 **Formulários e Validação:**
-- react-hook-form: 7.69.0
+- react-hook-form: 7.71.1
 - Zod: 4.2.1 (validação de schemas)
 - @hookform/resolvers: 5.2.2 (integração react-hook-form + Zod)
 
@@ -112,7 +112,7 @@ pnpm format
 **Ferramentas de Desenvolvimento:**
 - ESLint: 9.39.2 (com `eslint-config-next`)
 - Prettier: 3.7.4 (formatação automática)
-- Vitest: 2.1.8 (framework de testes)
+- Vitest: 4.0.18 (framework de testes)
 - @testing-library/react: 16.1.0
 - @testing-library/jest-dom: 6.6.3
 - jsdom: 25.0.1 (ambiente DOM para testes)
@@ -566,13 +566,25 @@ pnpm shadcn:add table select checkbox
 
 O projeto está em estado **estável e funcional** como template base. Todas as funcionalidades core estão implementadas e testadas. O template está pronto para ser usado como base para novos projetos.
 
+### Atualizações Recentes
+
+- ✅ Dependências atualizadas para versões mais recentes (Janeiro 2025)
+  - Next.js: 16.1.1 → 16.1.5
+  - Framer Motion: 12.23.26 → 12.29.2
+  - react-hook-form: 7.69.0 → 7.71.1 (inclui correções de segurança críticas)
+  - Vitest: 2.1.8 → 4.0.18
+  - eslint-config-next: 16.1.1 → 16.1.5
+- ✅ Página demo removida (template mais limpo e agnóstico)
+- ✅ shadcn CLI instalado localmente com scripts no package.json
+
 ### O Que Está Funcionando
 
 **Infraestrutura Base:**
-- ✅ Next.js 16 configurado com App Router e Turbopack
+- ✅ Next.js 16.1.5 configurado com App Router e Turbopack
 - ✅ TypeScript strict mode ativo
 - ✅ Tailwind CSS 4 configurado
 - ✅ ESLint + Prettier configurados
+- ✅ Dependências atualizadas para versões mais recentes
 
 **Sistema de UI:**
 - ✅ shadcn/ui inicializado
@@ -581,7 +593,7 @@ O projeto está em estado **estável e funcional** como template base. Todas as 
 - ✅ Temas: Sistema claro/escuro funcionando
 
 **Animações:**
-- ✅ Framer Motion 12 configurado
+- ✅ Framer Motion 12.29.2 configurado
 - ✅ MotionProvider respeitando `prefers-reduced-motion`
 - ✅ Variantes: slideUp, fadeIn, scaleIn disponíveis
 - ✅ Stagger: Função para animações em lista/grid
@@ -594,7 +606,7 @@ O projeto está em estado **estável e funcional** como template base. Todas as 
 
 **Validação:**
 - ✅ Zod 4 schemas funcionando
-- ✅ react-hook-form integrado com Zod
+- ✅ react-hook-form 7.71.1 integrado com Zod (com correções de segurança)
 - ✅ Validação de ambiente com Zod
 
 **Tratamento de Erros:**
@@ -608,7 +620,7 @@ O projeto está em estado **estável e funcional** como template base. Todas as 
 - ✅ Ambiente: `lib/env.ts` validando variáveis
 
 **Testes:**
-- ✅ Vitest configurado
+- ✅ Vitest 4.0.18 configurado
 - ✅ React Testing Library configurado
 - ✅ Exemplo: `lib/utils.test.ts`
 
