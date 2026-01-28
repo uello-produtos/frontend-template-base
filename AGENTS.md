@@ -576,6 +576,9 @@ O projeto está em estado **estável e funcional** como template base. Todas as 
   - eslint-config-next: 16.1.1 → 16.1.5
 - ✅ Página demo removida (template mais limpo e agnóstico)
 - ✅ shadcn CLI instalado localmente com scripts no package.json
+- ✅ Repositório migrado para organização uello-produtos (Janeiro 2025)
+  - Novo repositório: https://github.com/uello-produtos/frontend-template-base
+  - Documentação atualizada com novas referências
 
 ### O Que Está Funcionando
 

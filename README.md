@@ -78,7 +78,7 @@ Estrutura resumida:
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/utinside/frontend-template-base.git
+git clone https://github.com/uello-produtos/frontend-template-base.git
 cd frontend-template-base
 ```
 
@@ -299,7 +299,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👨‍💻 Autor
 
-**utinside** - [GitHub](https://github.com/utinside)
+**uello-produtos** - [GitHub](https://github.com/orgs/uello-produtos)
 
 ---
 

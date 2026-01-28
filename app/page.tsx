@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex gap-4 justify-center flex-wrap">
           <Button asChild variant="outline" size="lg">
             <a
-              href="https://github.com/utinside/frontend-template-base"
+              href="https://github.com/uello-produtos/frontend-template-base"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -110,7 +110,7 @@ export default function Home() {
         </p>
         <div className="flex justify-center">
           <code className="rounded-md bg-muted px-4 py-2 text-sm">
-            git clone https://github.com/utinside/frontend-template-base.git
+            git clone https://github.com/uello-produtos/frontend-template-base.git
           </code>
         </div>
       </section>
